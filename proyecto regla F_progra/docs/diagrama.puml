@@ -1,0 +1,38 @@
+@startuml 
+
+class ReglaFalsa {
+  - a: double
+  - b: double
+  - num_iteraciones: int
+  + ReglaFalsa(a: double, b: double, num_iteraciones: int)
+  + reglaFalsa(): double
+}
+
+class Main {
+  + main()
+}
+
+class Funcion {
+  - x: double
+  + funcion(x: double): double
+}
+
+class cout {
+  + << (args: any)
+}
+
+class cin {
+  + >> (var: any)
+}
+
+class setprecision {
+  + setprecision(precision: int)
+}
+
+ReglaFalsa --> Funcion
+ReglaFalsa --> cout
+ReglaFalsa --> cin
+ReglaFalsa --> setprecision
+Main --> ReglaFalsa
+
+@enduml
